@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+	<div class="row d-flex justify-content-center">
+			<article class=" media content-section col-md-8 ">
+				<img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+				<div class="media-body ">					
+					<h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+					<p class="article-content">{{ post.content }}</p>	
+					<div class="metadata">
+						Author: <a class="mr-4" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+						<small class="text-muted">{{ post.date_posted | date:'j-M-Y' }}</small>
+
+
+						<!-- Show Edit/Delete Buttons only to Author of Blog -->
+						{% if request.user ==  post.author %}
+							<div class="row">
+								<a class="btn btn-outline-info mr-2 btn-sm" href="{% url 'post-update' post.id %}">Edit</a>	
+								<a class="btn btn-outline-info mr-2 btn-sm" href="{% url 'post-delete' post.id %}">Delete</a>
+							</div>
+						{% endif %}
+
+					</div>
+				</div>
+			</article>
+	</div>
+
+{% endblock %}

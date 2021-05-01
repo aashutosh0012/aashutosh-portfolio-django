@@ -1,0 +1,16 @@
+
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="POST"> {% csrf_token %}
+	{{ form | crispy }}			<!-- #Add filter to use crispy tags -->
+	<input type="submit" value = "Sign Up">
+	
+
+</form>
+
+<a href="{% url 'blog-home' %}">Blog Home</a>
+<a href="{% url 'user-home' %}">User Home</a>
+<a href="{% url 'login' %}">Login</a>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'blog/base.html' %}
+
+
+<!-- Load CSS from Child Page after Base Template -->
+{% block css %}
+	<!-- Load Static Logos/Images -->
+	{% load static %}
+
+	<!-- CSS for Star Rating classes -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Custom CSS for Index Page -->
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+	<div class="d-flex justify-content-around align-content-center mt-3">
+		<div class="row align-items-center">
+			<div class="col-md-6 text-center">
+				<h2>Aashutosh Kumar</h2>
+				<p>Software Engineer, working on multiple Tools & Technologies. </p>
+			</div>
+			<div class="col-md-6 m-auto text-center">
+				<img src="{% static 'images/me.jpg' %}" class="rounded" style="width:70%">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="d-flex cards-flex justify-content-center align-items-center m-3" id="accordion">
+
+		<div class="m_card text-center">
+			<img class="rounded p-3 " src="{% static 'images/django_logo.png' %}" style="width:100%" >
+			<button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapsingDjango" aria-expanded="false"
+			aria-controls="collapsingDjango" >Django Developer</button>
+				<div class="collapse" id="collapsingDjango" data-parent="#accordion">
+					<ul class="list-unstyled">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Bootstrap</li>
+					</ul>	
+				</div>
+				<div class="card-footer bg-light text-dark rounded m-2">
+					<small class="text-muted">Self Rating: 
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star unchecked"></span>
+						<span class="fa fa-star unchecked"></span>
+					</small>
+				</div>
+		</div>
+
+		<div class="m_card text-center">
+			<img class="rounded p-3 " src="{% static 'images/python_logo.png' %}" style="width:100%" >
+			<button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapsingPython" aria-expanded="false"
+			aria-controls="collapsingPython">Python Programmer</button>
+				<div class="collapse" id="collapsingPython" data-parent="#accordion">
+					<ul class="list-unstyled">
+						<li>Web Scrapping</li>
+							<li>Working with REST APIS</li>
+							<li>Building GUI Apps with tkinter,pyautogui, pygame, turtle etc </li>
+							<li>Scripts for DBs & Servers</li>
+							<li>Classes, MultiThreading</li>
+					</ul>	
+				</div>
+				<div class="card-footer bg-light text-dark rounded m-2">
+					<small class="text-muted">Self Rating: 
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star unchecked"></span>
+						<span class="fa fa-star unchecked"></span>
+					</small>
+				</div>
+		</div>
+
+		<div class="m_card text-center">
+			<img class="rounded p-3 " src="{% static 'images/dba_logo.png' %}" style="width:100%" >
+			<button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapsingDBA" aria-expanded="false"
+			aria-controls="collapsingDBA">Database Administrator</button>
+				<div class="collapse" id="collapsingDBA" data-parent="#accordion">
+					<ul class="list-unstyled">
+						<li>Oracle</li>
+						<li>SQL Server</li>
+						<li>MySQL</li>
+						<li>PostgreSQL</li>
+					</ul>	
+				</div>
+				<div class="card-footer bg-light text-dark rounded m-2">
+					<small class="text-muted">Self Rating: 
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star unchecked"></span>
+						<span class="fa fa-star unchecked"></span>
+					</small>
+				</div>
+		</div>
+
+		<div class="m_card text-center">
+			<img class="rounded p-3 " src="{% static 'images/scripting_logo.png' %}" style="width:80%" >
+			<button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapsingScripting" aria-expanded="false" aria-controls="collapsingScripting">Automation Tools & Scripting</button>
+				<div class="collapse" id="collapsingScripting" data-parent="#accordion">
+					<ul class="list-unstyled">
+						<li>Shell Scriting</li>
+						<li>PowerShell Scriting</li>
+						<li>Jenkins</li>
+						<li>Ansible</li>
+					</ul>	
+				</div>
+				<div class="card-footer bg-light text-dark rounded m-2">
+					<small class="text-muted">Self Rating: 
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star unchecked"></span>
+						<span class="fa fa-star unchecked"></span>
+					</small>
+				</div>
+		</div>
+
+	</div>
+
+<!-- <div>
+	<br>
+	<hr>
+</div>
+ -->
+{% endblock %}		

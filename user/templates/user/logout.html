@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+Logged Out  !!!
+
+
+<hr>
+<a href="{% url 'blog-home' %}"> Blog Home </a> | 
+<a href="{% url 'user-home' %}"> User Home </a> | 
+<a href="{% url 'login' %}"> Login</a>
+
+{% endblock %}
