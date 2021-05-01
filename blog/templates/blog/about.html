@@ -16,7 +16,10 @@
 	<br>
  -->
 
- 	all = {{ all }}
+ 	<!-- all = {{ all }} -->
+ 	{% for key, value in all.items%}
+ 		{{ key}} , {{ value }} <br>
+ 	{% endfor %}
 
 </div>
 {% endblock  %}
