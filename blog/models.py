@@ -23,6 +23,19 @@ class Post(models.Model):
 	def get_absolute_url(self):
 		return reverse('post-detail', kwargs={'pk': self.pk})
 
+
+class Projects(models.Model):
+	title = models.CharField(max_length=255)
+	image = models.ImageField(upload_to='images/')
+	label = models.CharField(max_length=255, null=True, blank=True)
+	url = models.CharField(null=True, blank=True,max_length=2000)
+
+	class Meta:
+		verbose_name_plural = "Projects"
+
+	def __str__(self):
+		return self.title
+
 	
 
 

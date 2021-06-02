@@ -1,0 +1,24 @@
+
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid ">
+	<div class="row m-0">
+		<div class="col-md-1 border-right">
+			<ul class="list-group list-group-flush "> <h3>Projects</h3>
+				<a class="list-group-item list-group-item-action" href="{% url 'projects' %}" >All</a>
+				<a class="list-group-item list-group-item-action" href="{% url 'django-projects' %}"  >Django</a>
+				<a class="list-group-item list-group-item-action" href="{% url 'python-projects' %}">Python</a>
+				<a class="list-group-item list-group-item-action" href="{% url 'shell-projects' %}">Shell Scripting</a>
+			</ul>
+		</div>
+		<div class="col-md-11 ">
+			{% block project %} {% endblock %}
+			
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'blog/projects_1.html' %}
+{% load static %}
+
+{% block project %}
+
+
+<div class="container">
+	<div class="row mt-2 pt-1">
+		<div class="">
+			<h3>Jira-Solarwinds-Integration-via-REST-API</h3>
+			<p>Source Code on  
+				<strong>
+					Github:
+					<a class="text-decoration-none" href="https://github.com/aashutosh0012/Jira-Solarwinds-Integration-via-REST-API" target="_blank" rel="noopener" >
+					 https://github.com/aashutosh0012/Jira-Solarwinds-Integration-via-REST-API</a>
+				</strong>.
+			</p>
+
+			<h5>Summary</h5>
+				<p>SolarWinds Application collects all Alerts about any Objects in Different Tables in SolarWinds Database. The Alerts are stored in some tables only when the Alerts are Active, when Alert is resolved, Alerts is moved out of Active Alerts Table and recorded in Historical Tables. In Order to integrate SolarWinds Monitoring in Jira Service Desk for Ticket Creation for each alert, we:
+				</p>
+					<ul>
+						<li>Read Active Alerts from SolarWinds Database.</li>
+						<li>Store All Alerts in an external Database (INTERMEDIATE DB).</li>
+						<li>Compare if the New Alerts is already present in INTERMEDIATE DB.</li>
+						<li>If the Alert is New, Insert Alert Data in a INTERMEDIATE DB Table which store all information along with Alert Current Status, and create a Ticket in Jira SD via REST API.</li>
+						<li>If the Alert is already present, Ignore the Alert, as the Alert is still active and Ticket has been created already in Jira Service Desk.</li>
+						<li>If the Alert is not present in Active Alerts, but present in INTERMEDIATE DB Table, it means, Alert has resolved ,then Resolve the Ticket in Jira SD.</li>
+					</ul>
+					<img class="img-fluid border" style="max-width:100%; height:auto;" 
+						src="{% static 'images/projects/jira-sw-integration/image1.png' %}"> 
+					<img class="img-fluid border" style="max-width:100%; height:auto;" 
+						src="{% static 'images/projects/jira-sw-integration/image2.png' %}"> 
+					<img class="img-fluid border" style="max-width:100%; height:auto;" 
+						src="{% static 'images/projects/jira-sw-integration/image3.png' %}"> 
+				<p class="mt-4">Sample Ticket created in Jira Service Desk using Script</p>
+						<img class="img-fluid border" style="max-width:100%; height:auto;" 
+						src="{% static 'images/projects/jira-sw-integration/image4.png' %}"> 
+			<hr>
+			<p></p>
+			
+			
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+	{% block content %}
+
+		<div class="container-fluid ">
+			<div class="row m-0">
+				<div class="col-md-1 border-right">
+					<ul class="list-group list-group-flush"> <h3>Projects</h3>
+						<a class="list-group-item list-group-item-action" href="{% url 'projects' %}" >All</a>
+						<a class="list-group-item list-group-item-action" href="{% url 'django-projects' %}"  >Django</a>
+						<a class="list-group-item list-group-item-action" href="{% url 'python-projects' %}">Python</a>
+						<a class="list-group-item list-group-item-action" href="{% url 'shell-projects' %}">Shell Scripting</a>
+					</ul>
+				</div>
+				<div class="col-md-11 ">
+					<div class="d-flex justify-content-around flex-wrap text-center mt-2 text-wrap">
+						{% for project in projects %}
+							<a href="{% url 'projects' %}{{ project.url }}" class="text-decoration-none text-dark">
+								<div class="cards border border-primary m-2 p-2" style="background-color:#9EEFF7;">
+									<img class="border border-primary" src="{{ project.image.url }}" style="height:25vh; width:20vw;">
+									<h3 class=" m-1 p-2" >{{ project.title }}</h3>
+							</div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	{% endblock %}
+
+border

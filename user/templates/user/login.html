@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-	<div class="container col-md-4">
+	<div class="container col-md-4 text-center pb-2">
 		<h4>Login</h4>
 		{% for message in messages %}
 			{{ message }}
@@ -9,8 +9,13 @@
 		<form method="POST"> {% csrf_token %}
 			{{ form.as_p }}
 			<button type="submit" class="btn btn-primary">Login</button>
-			<a href="#">Forgot User	name or Password?</button>
 		</form>
+		<br>		
 		<p>Need Account? <a href="{% url 'signup' %}"><button type="button" class="btn btn-secondary">Signup</button></a></p>
+		<a href="{% url 'password-reset' %}">Reset Password or Forgot Username?</a>
 	</div>
 {% endblock %}
+
+
+<a href="{% url 'login' %}"> Login</a>
+ 

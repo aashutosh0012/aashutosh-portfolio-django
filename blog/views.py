@@ -57,9 +57,6 @@ def about(request):
 	return render(request,'blog/about.html', data)
 
 
-def projects(request):
-	return render(request,'blog/projects.html')
-
 
 #---------------------------------------------------------------------------------------------------------------------#
 #Class Based Views
@@ -135,3 +132,39 @@ class UserPostListView(ListView):
 
 
 #---------------------------------------------------------------------------------------------------------------------#
+
+
+#Proejcts
+#--------
+
+from .models import Projects
+def projects(request):
+	projects = Projects.objects.all()
+	context = {'projects':projects}
+	print("1")
+	return render(request,'blog/project_results.html', context)
+
+
+def djangoProjects(request):
+	projects = Projects.objects.filter(label__icontains="django")
+	context = {'projects':projects}
+	return render(request,'blog/project_results.html', context)
+
+def pythonProjects(request):
+	projects = Projects.objects.filter(label__icontains="python")
+	context = {'projects':projects}
+	return render(request,'blog/project_results.html', context)
+
+def shellProjects(request):
+	projects = Projects.objects.filter(label__icontains="shell")
+	context = {'projects':projects}
+	return render(request,'blog/project_results.html', context)
+
+def allTechNews(request):
+	return render(request,'blog/all-tech-news.html')
+
+def youtubeVideoDownloader(request):
+	return render(request,'blog/youtube-video-downloader.html')
+
+def jiraSolarwindsIntegration(request):
+	return render(request,'blog/jira-solarwinds-integration.html')

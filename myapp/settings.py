@@ -161,3 +161,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 #Media URL is the public URL which browser will use to access media files
 MEDIA_URL = '/media/'
 
+
+#EMAIL CONFIG Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('user')
+EMAIL_HOST_PASSWORD = os.environ.get('pass')
+
+# print(EMAIL_HOST_USER)
+# print(EMAIL_HOST_PASSWORD)
+
+#MEDIA_ROOT is the absolute filesystem path to the directory for user-uploaded files
+#MEDIA_URL is the URL we can use in our templates for the files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

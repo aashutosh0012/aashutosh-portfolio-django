@@ -2,35 +2,25 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-	<div class="content-section ml-6">
-    <div class="media">
-      <img class="ml-6" src="{{ user.profile.image.url }}">
-      <div class="media-body">
-        <h2 class="account-heading">{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
-      </div>
-    </div>
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <fieldset class="form-group">
-          <legend class="border-bottom mb-4">Profile Info</legend>
-          {{ u_form|crispy }}
-          {{ p_form|crispy }}
-      </fieldset>
-      <div class="form-group">
-          <button class="btn btn-outline-info" type="submit">Update</button>
-      </div>
-    </form>    
-  </div>
-
-  <div class="container">
-    <div class="media">
-      <img src="{{ user.profile.image.url }}" class="mr-3">
-      <div class="media-body">
-        <h4>User Name: {{ user.username }}</h4>
-        <h4>Email: {{ user.email }}</h4>
-      </div>
-    </div>
+  <div class="container">  
+    <legend class="border-bottom m-4 text-center ">Profile Info</legend>      
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}   
+          <div class="row">
+            <div class="col">
+              <div class="media">
+                <img class="ml-6" src="{{ user.profile.image.url }}">
+              </div>       
+              <fieldset class="form-group">{{ p_form|crispy }}</fieldset>
+            </div>
+            <div class="col">
+              <fieldset class="form-group">{{ u_form|crispy }} </fieldset>
+            </div>
+          </div>
+          <div class="form-group text-center mt-3">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+            <a href="{% url 'index' %}">Cancel</a>
+          </div>        
+        </form>  
   </div>
 
 {% endblock %}

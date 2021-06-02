@@ -1,0 +1,30 @@
+{% extends 'blog/projects_1.html' %}
+{% load static %}
+
+{% block project %}
+
+
+<div class="container">
+	<div class="row m-auto pt-1">
+		<div class="text-center">
+			<h3>All Tech News</h3>
+			<p><strong>Project URL:<a class="text-decoration-none" href="https://all-tech-news-315116.el.r.appspot.com/" target="_blank" rel="noopener noreferrer"> https://all-tech-news-315116.el.r.appspot.com/</a></strong></p>
+			<p>This project is hosted on <strong>Google Cloud's App Engine</strong>.</p>
+			<p>This is One Stop Site, where you can read all the Latest Tech News from various Top Websites & Magazines.</p>
+			<a href="https://all-tech-news-315116.el.r.appspot.com/" target="_blank" rel="noopener">
+				<img class="img-fluid" style="max-width:100%; height:auto;" src="{% static 'images/all-tech-news.png' %}"> 
+			</a>
+			<hr>
+			<p>This Website, has been built using Django, a python script web scrapes various Worldclass Magazines & Top Websites, and Dsiplays the Article Image & Heading as a Link to original source. </p>
+			
+			<p>Source Code on  
+				<strong>
+					Github:
+					<a class="text-decoration-none" href="https://github.com/aashutosh0012/django_news_agrregator" target="_blank" rel="noopener" >
+					 https://github.com/aashutosh0012/all-tech-news</a>
+				</strong>.
+			</p>
+		</div>
+	</div>
+
+{% endblock %}

@@ -20,6 +20,7 @@ from django.contrib.auth import views as auth_views
 from user import views as user_views
 from blog import views as blog_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('',blog_views.index, name='index'),
@@ -36,6 +37,14 @@ urlpatterns = [
 urlpatterns += [
     path('blog/',include('blog.urls')),
     path('user/',include('user.urls')),
+
+    path('projects/django/', blog_views.djangoProjects, name="django-projects"),
+    path('projects/python/', blog_views.pythonProjects, name="python-projects"),
+    path('projects/shell/', blog_views.shellProjects, name="shell-projects"),
+    path('projects/all-tech-news/', blog_views.allTechNews, name="all-tech-news"),
+    path('projects/youtube-video-downloader/', blog_views.youtubeVideoDownloader, name="youtube-video-downloader"),
+    path('projects/jira-solarwinds-integration-via-rest-api/', blog_views.jiraSolarwindsIntegration, name="jira-solarwinds-integration"),
+
 ]
 
 
